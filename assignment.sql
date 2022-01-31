@@ -2,8 +2,6 @@
 select min(date) startdate  ,max(date) enddate from assignment1.airbnb_calendar;
 
 
-
-
 # delete duplicate rows from table
 
 create table new_airbnb 
@@ -13,15 +11,9 @@ from assignment1.airbnb_calendar
 # here if u want u can drop original table
 
 
-
-
-
-
-
 #For each property, find out the number of days the property was available and not
 #available (create a table with listing_id, available days, unavailable days and available
 #days as a fraction of total days) ?
-
 
 create table availabledays
 as
@@ -32,10 +24,8 @@ having available='f';
 
 
 
-
-
-
 #How many properties were available on more than 50% of the days? How many properties were available on more than 75% of the days?
+
 create view ava2 as
 select count(*) as count
 from assignment1.airbnb_calendar
@@ -53,21 +43,12 @@ select count(*) as number_of_locations_available_for_more_than_50per from ava;
 
 
 
-
-
-
-
 #Create a table with max, min and average price of each property
 
 select listing_id,max(price) maxprice, min(price) minprice,AVG(price) as avgprice
 from assignment1.airbnb_calendar
 where available = 't'
 group by listing_id;
-
-
-
-
-
 
 
 
