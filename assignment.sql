@@ -59,4 +59,4 @@ from assignment1.airbnb_calendar
 where available = 't'
 group by listing_id;
 
-select * from avgextract where avgprice>=500;
+select * from avgextract where avgprice>500;
