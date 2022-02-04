@@ -45,10 +45,11 @@ select count(*) as number_of_locations_available_for_more_than_50per from ava;
 
 #Create a table with max, min and average price of each property
 
-select listing_id,max(price) maxprice, min(price) minprice,AVG(price) as avgprice
+create table maxminavg
+select listing_id,max(price),min(price),avg(price)
 from assignment1.airbnb_calendar
-where available = 't'
-group by listing_id;
+where available='t' and price is not NULL
+group by listing_id
 
 
 
