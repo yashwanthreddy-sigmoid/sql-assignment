@@ -54,10 +54,6 @@ group by listing_id
 
 
 #Extract properties with an average price of more than $500
-create view avgextract as
-select listing_id,max(price) maxprice, min(price) minprice,AVG(price) as avgprice
-from assignment1.airbnb_calendar
-where available = 't'
-group by listing_id;
 
-select * from avgextract where avgprice>500;
+
+select * from maxminavg where avgprice>500;
